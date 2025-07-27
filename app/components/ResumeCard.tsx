@@ -1,5 +1,6 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import type { Resume } from "../types";
 
 const ResumeCard: React.FC<{ resume: Resume }> = ({ resume }) => {
     return (
