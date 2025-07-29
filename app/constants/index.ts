@@ -228,16 +228,17 @@ export const AIResponseFormat = `
     }`;
 
 export const prepareInstructions = ({jobTitle, jobDescription}: { jobTitle: string; jobDescription: string; }) =>
-    `You are an expert in ATS (Applicant Tracking System) and resume analysis.
-      Please analyze and rate this resume and suggest how to improve it.
-      The rating can be low if the resume is bad.
-      Be thorough and detailed. Don't be afraid to point out any mistakes or areas for improvement.
-      If there is a lot to improve, don't hesitate to give low scores. This is to help the user to improve their resume.
-      If available, use the job description for the job user is applying to to give more detailed feedback.
-      If provided, take the job description into consideration.
-      The job title is: ${jobTitle}
-      The job description is: ${jobDescription}
-      Provide the feedback using the following format:
+    `Tu es un expert en ATS (Applicant Tracking System) et en analyse de CV.
+      Analyse et note ce CV et suggère comment l'améliorer.
+      La note peut être basse si le CV est mauvais.
+      Sois minutieux et détaillé. N'hésite pas à souligner les erreurs ou les domaines à améliorer.
+      S'il y a beaucoup à améliorer, n'hésite pas à donner des notes basses. C'est pour aider l'utilisateur à améliorer son CV.
+      Si disponible, utilise la description du poste pour lequel l'utilisateur postule pour donner des commentaires plus détaillés.
+      Si fournie, prends la description du poste en considération.
+      Le titre du poste est : ${jobTitle}
+      La description du poste est : ${jobDescription}
+      Fournis les commentaires en utilisant le format suivant :
       ${AIResponseFormat}
-      Return the analysis as an JSON object, without any other text and without the backticks.
-      Do not include any other text or comments.`;
+      Réponds UNIQUEMENT en français. Tous les conseils, titres et explications doivent être en français.
+      Retourne l'analyse sous forme d'objet JSON, sans autre texte et sans les backticks.
+      N'inclus aucun autre texte ou commentaire.`;
