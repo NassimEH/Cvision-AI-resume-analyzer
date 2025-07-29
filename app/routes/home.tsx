@@ -40,10 +40,10 @@ export default function Home() {
     loadResumes()
   }, []);
 
-  return <main className="bg-[url('/images/bg-main.svg')] bg-cover pt-8">
+  return <main>
     <Navbar />
 
-    <section className="main-section pt-16">
+    <section className="main-section">
       <div className="page-heading py-16">
         <h1>Suivez vos candidatures et évaluations de CV</h1>
         {!loadingResumes && resumes?.length === 0 ? (

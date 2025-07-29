@@ -8,6 +8,7 @@ import {
 } from "react-router";
 import { useEffect } from "react";
 import { usePuterStore } from "~/lib/puter"; // Update the path as needed
+import Footer from "~/components/Footer";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -50,7 +51,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <div className="flex flex-col min-h-screen bg-[url('/images/bg-main.svg')] bg-cover">
+      <div className="flex-1">
+        <Outlet />
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

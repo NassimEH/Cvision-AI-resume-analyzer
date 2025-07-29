@@ -54,8 +54,8 @@ const Resume = () => {
         <main className="!pt-0">
             <nav className="resume-nav">
                 <Link to="/" className="back-button">
-                    <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />
-                    <span className="text-gray-800 text-sm font-semibold">Back to Homepage</span>
+                    <img src="/icons/back.svg" alt="retour" className="w-3 h-3" />
+                    <span className="text-gray-800 font-medium">Retour à l'accueil</span>
                 </Link>
             </nav>
             <div className="flex flex-row w-full max-lg:flex-col-reverse">

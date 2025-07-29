@@ -20,7 +20,7 @@
 
 html,
 body {
-  @apply bg-white;
+  @apply bg-transparent;
 }
 
 main {
@@ -69,7 +69,7 @@ form {
     }
   }
   .back-button {
-    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm;
+    @apply flex flex-row items-center gap-3 border border-gray-300 rounded-full px-4 py-2 shadow-sm bg-white hover:bg-gray-50 transition-colors;
   }
   .auth-button {
     @apply primary-gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
@@ -109,7 +109,7 @@ form {
   }
 
   .navbar {
-    @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
+    @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto mt-8;
   }
 
   .score-badge {
@@ -125,6 +125,10 @@ form {
   }
   .uploader-selected-file {
     @apply flex items-center justify-between p-3 bg-gray-50 rounded-2xl;
+  }
+
+  .footer {
+    @apply bg-transparent;
   }
 }
 
