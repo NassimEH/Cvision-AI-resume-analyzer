@@ -1,13 +1,16 @@
+import type { Route } from "./+types/auth";
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { usePuterStore } from "~/lib/puter";
 
-export const meta = () => ([ 
-    { title: "CVision | Authentification" },
-    { name: "description", content: "Page d'authentification pour CVision" }
-]);
+export function meta({}: Route.MetaArgs) {
+    return [
+        { title: "CVision | Authentification" },
+        { name: "description", content: "Page d'authentification pour CVision" }
+    ];
+}
 
-const Auth: () => React.JSX.Element = () => {
+export default function Auth() {
     const { isLoading, auth } = usePuterStore();
     const location = useLocation();
     const next = location.search.split('next=')[1];
@@ -51,5 +54,3 @@ const Auth: () => React.JSX.Element = () => {
         </main>
     )
 }
-
-export default Auth;
