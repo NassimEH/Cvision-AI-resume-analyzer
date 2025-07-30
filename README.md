@@ -1,87 +1,154 @@
-# Welcome to React Router!
+# CVision - Analyseur de CV Intelligent
 
-A modern, production-ready template for building full-stack React applications using React Router.
+CVision est une application web qui utilise l'intelligence artificielle pour analyser et optimiser les CV afin d'améliorer les chances de réussite dans les candidatures professionnelles.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Objectif
 
-## Features
+Aider les candidats à optimiser leurs CV pour les systèmes ATS (Applicant Tracking System) et obtenir des retours constructifs personnalisés grâce à l'IA.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Fonctionnalités
 
-## Getting Started
+- **Analyse IA complète** avec scoring détaillé sur 5 critères (ATS, ton/style, contenu, structure, compétences)
+- **Upload et traitement** de fichiers PDF avec prévisualisation
+- **Suggestions personnalisées** adaptées au poste visé
+- **Dashboard de suivi** des analyses effectuées
+- **Authentification sécurisée** avec gestion des sessions
+- **Interface responsive** et moderne
+- **Gestion des données** utilisateur
 
-### Installation
+## Technologies
 
-Install the dependencies:
+### Frontend
+- **React Router v7** - Framework de routage moderne avec génération de types
+- **TypeScript** - Typage strict pour une meilleure robustesse
+- **Tailwind CSS** - Framework CSS utilitaire
+- **Vite** - Outil de build ultra-rapide
 
+### Backend & Services
+- **Puter Platform** - Service cloud pour l'authentification et le stockage
+- **API IA Générative** - Analyse intelligente des CV
+- **Traitement PDF** - Conversion et analyse des fichiers PDF
+
+### Infrastructure
+- **Docker** - Containerisation pour le déploiement
+- **SPA Mode** - Application monopage
+
+## Installation
+
+### Prérequis
+- Node.js (version 18+)
+- npm ou yarn
+
+### Installation locale
+
+1. Cloner le repository
+```bash
+git clone https://github.com/NassimEH/ai-resume-analyzer.git
+cd ai-resume-analyzer
+```
+
+2. Installer les dépendances
 ```bash
 npm install
 ```
 
-### Development
+3. Configurer les variables d'environnement
+```bash
+# Créer un fichier .env avec vos clés API
+cp .env.example .env
+```
 
-Start the development server with HMR:
-
+4. Lancer le serveur de développement
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+5. Ouvrir [http://localhost:5173](http://localhost:5173) dans votre navigateur
 
-## Building for Production
+## Utilisation
 
-Create a production build:
+1. **Authentification** - Créer un compte ou se connecter
+2. **Upload CV** - Télécharger votre CV au format PDF
+3. **Renseigner le poste** - Indiquer le titre et la description du poste visé
+4. **Analyse** - L'IA analyse votre CV et génère un rapport détaillé
+5. **Consultation** - Consulter les scores et suggestions d'amélioration
+6. **Suivi** - Accéder à toutes vos analyses depuis le dashboard
+
+## Structure du Projet
+
+```
+├── app/
+│   ├── components/          # Composants React réutilisables
+│   ├── routes/             # Pages de l'application
+│   ├── lib/                # Utilitaires et services
+│   ├── types/              # Définitions TypeScript
+│   └── constants/          # Constantes et configuration
+├── public/                 # Assets statiques
+├── build/                  # Build de production
+└── docker/                 # Configuration Docker
+```
+
+## Scripts Disponibles
 
 ```bash
-npm run build
+npm run dev          # Serveur de développement
+npm run build        # Build de production
+npm run preview      # Prévisualisation du build
+npm run lint         # Vérification du code
+npm run type-check   # Vérification TypeScript
 ```
 
-## Deployment
+## Docker
 
-### Docker Deployment
-
-To build and run using Docker:
-
+### Build de l'image
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+docker build -t cvision .
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+### Lancement du container
+```bash
+docker run -p 3000:3000 cvision
 ```
 
-## Styling
+## Système de Notation
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+L'analyse génère un score sur 100 points réparti sur 5 critères :
+
+- **ATS (20pts)** - Compatibilité avec les systèmes de tri automatisés
+- **Ton & Style (20pts)** - Professionnalisme et cohérence
+- **Contenu (20pts)** - Pertinence et impact des informations
+- **Structure (20pts)** - Organisation et lisibilité
+- **Compétences (20pts)** - Adéquation avec le poste visé
+
+## Contribution
+
+1. Fork le projet
+2. Créer une branche pour votre fonctionnalité (`git checkout -b feature/nouvelle-fonctionnalite`)
+3. Commit vos changements (`git commit -m 'Ajout nouvelle fonctionnalité'`)
+4. Push vers la branche (`git push origin feature/nouvelle-fonctionnalite`)
+5. Ouvrir une Pull Request
+
+## Sécurité & Confidentialité
+
+- Gestion sécurisée des données utilisateur
+- Authentification robuste via Puter Platform
+- Conformité aux réglementations sur la protection des données
+- Options de suppression des données utilisateur
+
+## Licence
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+
+## Auteur
+
+**Nassim EL HADDAD**
+- GitHub: [@NassimEH](https://github.com/NassimEH)
+- LinkedIn: [nassim-elhaddad](https://www.linkedin.com/in/nassim-elhaddad/)
+
+## Support
+
+Pour toute question ou problème, ouvrir une issue sur GitHub ou me contacter directement.
 
 ---
 
-Built with ❤️ using React Router.
+CVision combine technologies modernes et intelligence artificielle pour maximiser les chances de succès professionnel des utilisateurs à travers une analyse approfondie et des conseils actionnables pour l'amélioration des CV.
