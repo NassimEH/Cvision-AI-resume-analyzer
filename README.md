@@ -33,38 +33,6 @@ Aider les candidats à optimiser leurs CV pour les systèmes ATS (Applicant Trac
 - **Docker** - Containerisation pour le déploiement
 - **SPA Mode** - Application monopage
 
-## Installation
-
-### Prérequis
-- Node.js (version 18+)
-- npm ou yarn
-
-### Installation locale
-
-1. Cloner le repository
-```bash
-git clone https://github.com/NassimEH/ai-resume-analyzer.git
-cd ai-resume-analyzer
-```
-
-2. Installer les dépendances
-```bash
-npm install
-```
-
-3. Configurer les variables d'environnement
-```bash
-# Créer un fichier .env avec vos clés API
-cp .env.example .env
-```
-
-4. Lancer le serveur de développement
-```bash
-npm run dev
-```
-
-5. Ouvrir [http://localhost:5173](http://localhost:5173) dans votre navigateur
-
 ## Utilisation
 
 1. **Authentification** - Créer un compte ou se connecter
@@ -88,28 +56,6 @@ npm run dev
 └── docker/                 # Configuration Docker
 ```
 
-## Scripts Disponibles
-
-```bash
-npm run dev          # Serveur de développement
-npm run build        # Build de production
-npm run preview      # Prévisualisation du build
-npm run lint         # Vérification du code
-npm run type-check   # Vérification TypeScript
-```
-
-## Docker
-
-### Build de l'image
-```bash
-docker build -t cvision .
-```
-
-### Lancement du container
-```bash
-docker run -p 3000:3000 cvision
-```
-
 ## Système de Notation
 
 L'analyse génère un score sur 100 points réparti sur 5 critères :
@@ -119,14 +65,6 @@ L'analyse génère un score sur 100 points réparti sur 5 critères :
 - **Contenu (20pts)** - Pertinence et impact des informations
 - **Structure (20pts)** - Organisation et lisibilité
 - **Compétences (20pts)** - Adéquation avec le poste visé
-
-## Contribution
-
-1. Fork le projet
-2. Créer une branche pour votre fonctionnalité (`git checkout -b feature/nouvelle-fonctionnalite`)
-3. Commit vos changements (`git commit -m 'Ajout nouvelle fonctionnalité'`)
-4. Push vers la branche (`git push origin feature/nouvelle-fonctionnalite`)
-5. Ouvrir une Pull Request
 
 ## Sécurité & Confidentialité
 
